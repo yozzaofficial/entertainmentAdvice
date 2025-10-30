@@ -12,10 +12,12 @@ div.currentContainer{
 div.adviceContainer div,
 div.bestContainer div,
 div.currentContainer div{
-    overflow: auto;
+    overflow: hidden;
     width: 90%;
+    position: relative;
 }
 h2{
+    font-size: 1.1em;
     font-weight: 400;
     text-align: center;
     margin-bottom: 50px;
@@ -24,6 +26,7 @@ ul.titlesContainer{
     display: flex;
     gap: 20px;
     list-style: none;
+     overflow-x: auto;
 }
 li.titles{
     width: 160px;
@@ -31,4 +34,58 @@ li.titles{
     flex-shrink: 0;
     background-color: white;
     cursor: pointer;
+}
+li.titles:hover{
+    transition: 0.2s ease;
+   transform: scale(1.01);
+}
+div.bestContainer div.arrowLeftContainer{
+    height: 100%;
+    width: 40px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    left: 0;
+}
+.arrowLeft{
+    height: 50%;
+    width: 120%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(0.6);
+    background-image: url("./../../assets/arrow.png");
+    background-repeat: none;
+    background-size:cover;
+    background-position: center;
+    cursor: pointer;
+}
+.arrowLeftContainer:hover{
+    background-color: lightslategray;
+}
+div.bestContainer div.arrowRightContainer{
+    height: 100%;
+    width: 40px;
+    position: absolute;
+    top:0;
+    right:0;
+    cursor: pointer;
+    z-index: 1;
+
+}
+.arrowRight{
+    height: 50%;
+    width: 120%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(0.6) rotate(180deg);
+    background-image: url("./../../assets/arrow.png");
+    background-repeat: none;
+    background-size:cover;
+    background-position: center;
+    cursor: pointer;
+}
+.arrowRightContainer:hover{
+    background-color: lightslategray;
 }
