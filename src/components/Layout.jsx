@@ -6,6 +6,11 @@ export default function Layout(){
         fontWeight: "bold",
         textDecoration: "underline",
     } 
+    const [searchParams,setSearchParams] = useSearchParams()
+    const type = searchParams.get("type");
+
+
+
     return(
         <>
             <header className="headerLayout">
@@ -13,6 +18,7 @@ export default function Layout(){
                 <nav>
                     <NavLink to="?type=film">Film</NavLink>
                     <NavLink to="?type=series">Series</NavLink>
+                    {type ? <NavLink to ="/" className="filterActive">x</NavLink> : null}
                 </nav>
             </header>
             <Outlet/>
