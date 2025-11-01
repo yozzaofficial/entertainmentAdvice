@@ -270,6 +270,19 @@ const Data=[
   "Current": true,
   "Type": "series",
   "Favorite": false
+},
+{
+  "id": 22,
+  "Name": "Nightcrawler",
+  "Platform": "Prime Video",
+  "Image": "https://m.media-amazon.com/images/I/916TmQhLhXL._AC_UF894,1000_QL80_.jpg",
+  "Seasons": 1,
+  "Episodes": 1,
+  "Duration": 117,
+  "Plot": "A driven young man stumbles into the world of Los Angeles crime journalism and blurs the line between observer and participant to become the star of his own story.",
+  "Current": false,
+  "Type": "film",
+  "Favorite": false
 }
 ]
 

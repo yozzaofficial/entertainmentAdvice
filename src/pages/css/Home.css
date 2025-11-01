@@ -15,7 +15,13 @@ div.currentContainer div{
     overflow: hidden;
     width: 90%;
     position: relative;
+    scrollbar-width: none;
 }
+div.currentContainer div {
+    display: flex;
+    justify-content: center;
+}
+
 h2{
     font-size: 1.1em;
     font-weight: 400;
@@ -26,7 +32,11 @@ ul.titlesContainer{
     display: flex;
     gap: 20px;
     list-style: none;
-     overflow-x: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+ul.titlesContainer::-webkit-scrollbar{
+    display: none;
 }
 li.titles{
     width: 160px;
@@ -39,7 +49,10 @@ li.titles:hover{
     transition: 0.2s ease;
    transform: scale(1.01);
 }
-div.bestContainer div.arrowLeftContainer{
+div.bestContainer div.arrowLeftContainer,
+div.adviceContainer div.arrowLeftContainer,
+div.currentContainer div.arrowLeftContainer
+{
     height: 100%;
     width: 40px;
     position: absolute;
@@ -53,17 +66,17 @@ div.bestContainer div.arrowLeftContainer{
     position: absolute;
     top:50%;
     left:50%;
-    transform: translate(-50%, -50%) scale(0.6);
+    transform: translate(-50%, -50%) scale(0.6) rotate(180deg);
     background-image: url("./../../assets/arrow.png");
     background-repeat: none;
     background-size:cover;
     background-position: center;
     cursor: pointer;
 }
-.arrowLeftContainer:hover{
-    background-color: lightslategray;
-}
-div.bestContainer div.arrowRightContainer{
+/* maybe use a id */
+div.bestContainer div.arrowRightContainer,
+div.adviceContainer div.arrowRightContainer,
+div.currentContainer div.arrowRightContainer{ 
     height: 100%;
     width: 40px;
     position: absolute;
@@ -79,13 +92,23 @@ div.bestContainer div.arrowRightContainer{
     position: absolute;
     top:50%;
     left:50%;
-    transform: translate(-50%, -50%) scale(0.6) rotate(180deg);
+    transform: translate(-50%, -50%) scale(0.6);
     background-image: url("./../../assets/arrow.png");
     background-repeat: none;
     background-size:cover;
     background-position: center;
     cursor: pointer;
 }
+.arrows{
+    display:none;
+}
 .arrowRightContainer:hover{
-    background-color: lightslategray;
+background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.189))
+}
+.arrowLeftContainer:hover{
+background-image: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.189))
+}
+.arrowRightContainer:hover .arrows,
+.arrowLeftContainer:hover .arrows{
+display: block;
 }
