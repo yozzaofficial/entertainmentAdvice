@@ -1,18 +1,19 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useSearchParams } from "react-router-dom";
 import Title from "./../components/Title"
 import Data from "./../titles"
 import Arrow from "./../components/Arrow"
 import TitleDetail from "./TitleDetail";
+import { MyContext } from "../App";
 import "./css/Home.css"
 export default function Home(){
 
 const [searchParams] = useSearchParams();
-const [openTitle,setOpenTitle] = React.useState(false)
+// const [openTitle,setOpenTitle] = React.useState(false)
 const [titleOpened,setTitleOpened] = React.useState()
 const [popupPos, setPopupPos] = React.useState(0);
 const type = searchParams.get("type");
-
+const {openTitle,setOpenTitle} = useContext(MyContext)
 let currentFilter = type ? Data.filter(e => e.Type === type) : Data;
 
 const favTitles = currentFilter.filter(e => e.Favorite==true)
@@ -39,7 +40,6 @@ function openTitleHandler(id){
     setPopupPos(
         100 + window.scrollY,
       );
-      console.log(popupPos)
 }
 
 return (
