@@ -1,6 +1,9 @@
 main{
     padding-top: 100px;
 }
+.container{
+    position: relative;
+}
 div.adviceContainer,
 div.bestContainer,
 div.currentContainer{

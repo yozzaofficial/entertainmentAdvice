@@ -10,6 +10,7 @@ export default function Home(){
 const [searchParams] = useSearchParams();
 const [openTitle,setOpenTitle] = React.useState(false)
 const [titleOpened,setTitleOpened] = React.useState()
+const [popupPos, setPopupPos] = React.useState(0);
 const type = searchParams.get("type");
 
 let currentFilter = type ? Data.filter(e => e.Type === type) : Data;
@@ -19,6 +20,7 @@ const currentTitles = currentFilter.filter(e=> e.Current==true)
 
 const bestToScroll = React.useRef(null)
 const adviceToScroll= React.useRef(null)
+const titleOpenedPosition =  React.useRef(null)
 function clickHandlerRx(ref){
   if (ref.current) {
       ref.current.scrollBy({ left: 200, behavior: "smooth" });
@@ -33,11 +35,16 @@ function openTitleHandler(id){
     setOpenTitle(prev => !prev)
     const titleSelected = Data.find(e => e.id==id)
     setTitleOpened(titleSelected)
+    const rect = titleOpenedPosition.current.getBoundingClientRect();
+    setPopupPos(
+        100 + window.scrollY,
+      );
+      console.log(popupPos)
 }
 
 return (
     <>
-    <main className={openTitle ? "backgroundBlur" : null}>
+    <main className={openTitle ? "backgroundBlur" : null} ref={titleOpenedPosition}>
         <div className="adviceContainer">
             <h2>Matteo suggest</h2>
             <div>
@@ -67,7 +74,11 @@ return (
             </div>
         </div>}
     </main>
-    {openTitle && <TitleDetail title={titleOpened} closeTitleDetail={()=> setOpenTitle(prev => !prev)}/>}
+    {openTitle && 
+    <TitleDetail 
+    title={titleOpened} 
+    closeTitleDetail={()=> setOpenTitle(prev => !prev)} 
+    topPosition = {popupPos}/>}
     </>
 )
 }

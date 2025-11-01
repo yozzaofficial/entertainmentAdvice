@@ -1,9 +1,9 @@
 import React from "react"
 import "./css/TitleDetail.css"
-export default function TitleDetail({title,closeTitleDetail}){
+export default function TitleDetail({title,closeTitleDetail,topPosition}){
 
     return(
-        <div className="titleDetailContainer">
+        <div className="titleDetailContainer" style={{top: `${topPosition}px`}}>
             <header id="titleDetailHeader">
                 <img src={title.Image} alt="Title image"></img> 
                 <div className="headerTitleDetails">
