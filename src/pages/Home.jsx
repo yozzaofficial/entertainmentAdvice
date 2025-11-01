@@ -26,6 +26,7 @@ function clickHandlerLx(ref){
       ref.current.scrollBy({ left: -200, behavior: "smooth" });
     }
 }
+console.log(currentTitles)
 
 return (
     <main>
@@ -49,14 +50,14 @@ return (
                 <Arrow dir="right" clickHandler={() => clickHandlerRx(bestToScroll)}/>
             </div>
         </div>
-        <div className="currentContainer">
+        {currentTitles.length>0 &&  <div className="currentContainer">
             <h2>Matteo Current's watching</h2>
             <div>
                 <ul className="titlesContainer">
                     <Title Data={currentTitles}/>
                 </ul>
             </div>
-        </div>
+        </div>}
     </main>
 )
 }
