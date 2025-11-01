@@ -112,3 +112,12 @@ background-image: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.18
 .arrowLeftContainer:hover .arrows{
 display: block;
 }
+
+@media all and (min-width:900px){
+div.adviceContainer div,
+div.bestContainer div{
+display: flex;
+justify-content: center;
+}
+
+}

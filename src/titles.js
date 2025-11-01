@@ -283,7 +283,86 @@ const Data=[
   "Current": false,
   "Type": "film",
   "Favorite": false
+},
+{
+  "id": 23,
+  "Name": "Reacher",
+  "Platform": "Prime Video",
+  "Image": "https://m.media-amazon.com/images/I/61-kMCKFTGL._AC_UF894,1000_QL80_.jpg",
+  "Seasons": 3,
+  "Episodes": 24,
+  "Duration": 49,
+  "Plot": "Ex‑military policeman Jack Reacher travels across America, unknown to the authorities, fighting corruption and injustice wherever he finds it.",
+  "Current": false,
+  "Type": "series",
+  "Favorite": false
+},
+{
+  "id": 24,
+  "Name": "Nobody",
+  "Platform": "Prime Video",
+  "Image": "https://mr.comingsoon.it/imgdb/locandine/big/59484.jpg",
+  "Seasons": 1,
+  "Episodes": 1,
+  "Duration": 92,
+  "Plot": "An overlooked dad and husband, mistaken for a nobody, finds himself in a violent conflict after a home invasion exposes dark secrets he's spent years trying to keep hidden.",
+  "Current": false,
+  "Type": "film",
+  "Favorite": false
+},
+{
+  "id": 25,
+  "Name": "El Camino: A Breaking Bad Movie",
+  "Platform": "Netflix",
+  "Image": "https://m.media-amazon.com/images/M/MV5BYTYxMjI2YzUtODQ5Mi00M2JmLTlmNzItOTlkM2MyM2ExM2RlXkEyXkFqcGc@._V1_.jpg",
+  "Seasons": 1,
+  "Episodes": 1,
+  "Duration": 122,
+  "Plot": "In the aftermath of his dramatic escape from captivity, Jesse Pinkman must confront his past in order to forge some kind of future. " ,
+  "Current": false,
+  "Type": "film",
+  "Favorite": false
+},
+{
+  "id": 26,
+  "Name": "All Quiet on the Western Front",
+  "Platform": "Netflix",
+  "Image": "https://pad.mymovies.it/filmclub/2022/09/024/locandina.jpg",
+  "Seasons": 1,
+  "Episodes": 1,
+  "Duration": 148,
+  "Plot": "A young German soldier's eagerness to serve his country quickly fades when he witnesses the horrors of combat on the Western Front during World War I.",
+  "Current": false,
+  "Type": "film",
+  "Favorite": false
+},
+{
+  "id": 27,
+  "Name": "The Last Kingdom",
+  "Platform": "Netflix",
+  "Image": "https://m.media-amazon.com/images/M/MV5BMjE1MzYzNjk3OF5BMl5BanBnXkFtZTgwMzk0MzYwNzE@._V1_.jpg",
+  "Seasons": 5,
+  "Episodes": 46,
+  "Duration": 57,
+  "Plot": "A Saxon‑born warrior raised by Vikings must choose where his loyalty lies as Alfred the Great defends his kingdom from Norse invaders.",
+  "Current": false,
+  "Type": "series",
+  "Favorite": false
+},
+{
+  "id": 28,
+  "Name": "Vikings: Valhalla",
+  "Platform": "Netflix",
+  "Image": "https://m.media-amazon.com/images/M/MV5BYWFjYmMxMjMtMGE2ZC00YWZhLTgzNDYtYTA3ODA2MDg2NTA4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "Seasons": 3,
+  "Episodes": 24,
+  "Duration": 50,
+  "Plot": "A century after the era of Ragnar, legendary Viking warriors — Leif Eriksson, Freydís Eiríksdóttir and Harald Hardrada — rise to forge their own destiny and confront a changing Europe and the end of the Viking age.",
+  "Current": false,
+  "Type": "series",
+  "Favorite": false
 }
+
 ]
 
 export default Data
