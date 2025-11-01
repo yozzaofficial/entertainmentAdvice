@@ -2,9 +2,8 @@ import React from "react"
 import {Outlet,NavLink, useSearchParams} from "react-router-dom"
 import "./css/Layout.css"
 export default function Layout(){
-    const activeStyle={
+    const activeStyles={
         fontWeight: "bold",
-        textDecoration: "underline",
     } 
     const [searchParams,setSearchParams] = useSearchParams()
     const type = searchParams.get("type");
@@ -16,8 +15,15 @@ export default function Layout(){
             <header className="headerLayout">
                 <h1><NavLink to="/">Matteo Advice</NavLink></h1>
                 <nav>
-                    <NavLink to="?type=film">Film</NavLink>
-                    <NavLink to="?type=series">Series</NavLink>
+                    <NavLink 
+                    to="?type=film"
+                    end
+                    style={type === "film" ? activeStyles : undefined}
+                    >Film</NavLink>
+                    <NavLink 
+                    to="?type=series" 
+                    style={type === "series" ? activeStyles : undefined}
+                     >   Series</NavLink>
                     {type ? <NavLink to ="/" className="filterActive">x</NavLink> : null}
                 </nav>
             </header>

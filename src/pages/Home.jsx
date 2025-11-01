@@ -26,7 +26,6 @@ function clickHandlerLx(ref){
       ref.current.scrollBy({ left: -200, behavior: "smooth" });
     }
 }
-console.log(currentTitles)
 
 return (
     <main>

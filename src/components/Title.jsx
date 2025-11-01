@@ -12,7 +12,7 @@ export default function Title({Data}){
                     backgroundImage:`url("${e.Image}")`,
                     backgroundPosition:"center",
                     backgroundSize:"cover"}}>
-            {e.id}</li>)
+            </li>)
     })
     
     return(
