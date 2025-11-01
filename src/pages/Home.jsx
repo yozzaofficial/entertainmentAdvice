@@ -7,6 +7,8 @@ import "./css/Home.css"
 export default function Home(){
 
 const [searchParams] = useSearchParams();
+const [openTitle,setOpenTitle] = React.useState(false)
+const [titleOpened,setTitleOpened] = React.useState()
 const type = searchParams.get("type");
 
 let currentFilter = type ? Data.filter(e => e.Type === type) : Data;
@@ -26,6 +28,11 @@ function clickHandlerLx(ref){
       ref.current.scrollBy({ left: -200, behavior: "smooth" });
     }
 }
+function openTitleHandler(id){
+    setOpenTitle(prev => !prev)
+    const titleSelected = Data.find(e => e.id==id)
+    setTitleOpened(titleSelected)
+}
 
 return (
     <main>
@@ -34,7 +41,7 @@ return (
             <div>
                 <Arrow dir="left" clickHandler={() => clickHandlerLx(adviceToScroll)} />
                 <ul className="titlesContainer" ref={adviceToScroll}>
-                    <Title Data={currentFilter}/>
+                    <Title Data={currentFilter} openTitleHandler={openTitleHandler}/>
                 </ul>
                 <Arrow dir="right" clickHandler={() => clickHandlerRx(adviceToScroll)}/>
             </div>
@@ -44,7 +51,7 @@ return (
             <div >
                 <Arrow dir="left" clickHandler={() => clickHandlerLx(bestToScroll)} />
                 <ul className="titlesContainer" ref={bestToScroll}>
-                    <Title Data={favTitles}/>
+                    <Title Data={favTitles} openTitleHandler={openTitleHandler}/>
                 </ul>
                 <Arrow dir="right" clickHandler={() => clickHandlerRx(bestToScroll)}/>
             </div>
@@ -53,7 +60,7 @@ return (
             <h2>Matteo Current's watching</h2>
             <div>
                 <ul className="titlesContainer">
-                    <Title Data={currentTitles}/>
+                    <Title Data={currentTitles} openTitleHandler={openTitleHandler}/>
                 </ul>
             </div>
         </div>}
