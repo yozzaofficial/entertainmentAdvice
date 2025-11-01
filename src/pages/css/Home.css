@@ -121,3 +121,6 @@ justify-content: center;
 }
 
 }
+.backgroundBlur{
+    filter: blur(10px);
+}

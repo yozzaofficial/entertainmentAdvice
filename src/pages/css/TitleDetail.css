@@ -1,0 +1,47 @@
+.titleDetailContainer{
+    width: 600px;
+    height: min-content;
+    background-color: rgb(13, 13, 13);
+    position: absolute;
+    top:5%;
+    left:50%;
+    transform: translateX(-50%);
+    border-radius: 25px;
+    z-index: 1;
+    padding: 20px;
+}
+#titleDetailHeader {
+    display: flex;
+    justify-content: flex-start;
+    gap:50px;
+}
+#titleDetailHeader img{
+    width: 180px;
+    border-radius: 10px;
+}
+#titleDetailHeader h2{
+   font-size: 1.8em;
+   font-weight: 500;
+   letter-spacing: 2px;
+   margin: 0;
+   text-align: left;
+}
+.headerTitleDetails{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.headerTitleDetails div{
+display: flex;
+gap:50px;
+margin-bottom: 20px;
+}
+.titleDetailContainer span{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    font-size: 1.5em;
+    font-weight: 100;
+    cursor: pointer;
+}

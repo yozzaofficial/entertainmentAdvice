@@ -6,23 +6,23 @@ h1 a{
     letter-spacing: 5px;
     color: red;
 }
-header{
+#headerLayout{
     display:flex;
     flex-direction: column;
     align-items: center;
     gap:60px;
 }
-.headerLayout nav{
+#headerLayout nav{
     display: flex;
     gap:25px;
     position: relative;
 }
-.headerLayout nav a.filterActive{
+#headerLayout nav a.filterActive{
     position: absolute;
     left:120%;
     cursor: pointer;
 }
-.headerLayout nav a{
+#headerLayout nav a{
     text-decoration: none;
     font-size: 1.2em;
 }

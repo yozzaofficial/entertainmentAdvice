@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import Title from "./../components/Title"
 import Data from "./../titles"
 import Arrow from "./../components/Arrow"
+import TitleDetail from "./TitleDetail";
 import "./css/Home.css"
 export default function Home(){
 
@@ -35,7 +36,8 @@ function openTitleHandler(id){
 }
 
 return (
-    <main>
+    <>
+    <main className={openTitle ? "backgroundBlur" : null}>
         <div className="adviceContainer">
             <h2>Matteo suggest</h2>
             <div>
@@ -65,5 +67,7 @@ return (
             </div>
         </div>}
     </main>
+    {openTitle && <TitleDetail title={titleOpened} closeTitleDetail={()=> setOpenTitle(prev => !prev)}/>}
+    </>
 )
 }

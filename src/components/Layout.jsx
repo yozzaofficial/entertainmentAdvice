@@ -12,7 +12,7 @@ export default function Layout(){
 
     return(
         <>
-            <header className="headerLayout">
+            <header id="headerLayout">
                 <h1><NavLink to="/">Matteo Advice</NavLink></h1>
                 <nav>
                     <NavLink 
