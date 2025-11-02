@@ -43,3 +43,20 @@ h1 a{
     transform: translateY(-50%);
     cursor: pointer;
 }
+
+
+@media all and (max-width:550px)
+{
+    .icon-profile{
+        width: 20px;
+        height: 20px;
+    }
+}
+@media all and (max-width:400px)
+{
+    .icon-profile{
+        top:150%;
+        left:50%;
+        transform: translateX(-50%);
+    }
+}
