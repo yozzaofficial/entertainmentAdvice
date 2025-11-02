@@ -9,9 +9,11 @@ import { createContext, useState } from "react";
 import "./App.css"
 function App() {
 const [openTitle,setOpenTitle] = React.useState(false)
+const [titleLiked, setTitleLiked] = React.useState([])
+const [titleDisliked,setTitleDisliked] = React.useState([])
   return (
     <>
-     <MyContext.Provider value={{openTitle,setOpenTitle}}>
+     <MyContext.Provider value={{openTitle,setOpenTitle,titleLiked,setTitleLiked}}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout/>}>

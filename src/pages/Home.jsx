@@ -10,11 +10,12 @@ import "./css/Home.css"
 export default function Home(){
 
 const [searchParams] = useSearchParams();
-// const [openTitle,setOpenTitle] = React.useState(false)
 const [titleOpened,setTitleOpened] = React.useState()
 const [popupPos, setPopupPos] = React.useState(0);
 const type = searchParams.get("type");
 const {openTitle,setOpenTitle} = useContext(MyContext)
+
+const {titleLiked, setTitleLiked} = useContext(MyContext)
 
 let currentFilter = type ? Data.filter(e => e.Type === type) : Data;
 const favTitles = currentFilter.filter(e => e.Favorite==true)
@@ -24,6 +25,7 @@ const bestToScroll = React.useRef(null)
 const adviceToScroll= React.useRef(null)
 const titleOpenedPosition =  React.useRef(null)
 const titleDetailClickAway = React.useRef(null)
+ const clickTimeout = React.useRef(null);
 
 useClickAway(titleDetailClickAway, () => {if(openTitle){setOpenTitle(false)}});
 
@@ -38,13 +40,33 @@ function clickHandlerLx(ref){
     }
 }
 function openTitleHandler(id){
-    setOpenTitle(prev => !prev)
-    const titleSelected = Data.find(e => e.id==id)
-    setTitleOpened(titleSelected)
-    const rect = titleOpenedPosition.current.getBoundingClientRect();
-    setPopupPos(
-        100 + window.scrollY,
+    if (clickTimeout.current) return;
+
+    clickTimeout.current = setTimeout(()=>{
+
+        setOpenTitle(prev => !prev)
+        const titleSelected = Data.find(e => e.id==id)
+        setTitleOpened(titleSelected)
+        const rect = titleOpenedPosition.current.getBoundingClientRect();
+        setPopupPos(
+            100 + window.scrollY,
+
       );
+      clickTimeout.current = null;
+    },250)
+   
+}
+
+function likeHandler(id){
+
+ if (clickTimeout.current) {
+    clearTimeout(clickTimeout.current);
+    clickTimeout.current = null;
+  }
+
+const titleSelected = Data.find(e => e.id==id)
+setTitleLiked(prev => [...prev, titleSelected.id])
+
 }
 
 return (
@@ -55,7 +77,10 @@ return (
             <div>
                 <Arrow dir="left" clickHandler={() => clickHandlerLx(adviceToScroll)} />
                 <ul className="titlesContainer" ref={adviceToScroll}>
-                    <Title Data={currentFilter} openTitleHandler={openTitleHandler}/>
+                    <Title 
+                        Data={currentFilter} 
+                        openTitleHandler={openTitleHandler}
+                        like={likeHandler}/>
                 </ul>
                 <Arrow dir="right" clickHandler={() => clickHandlerRx(adviceToScroll)}/>
             </div>
@@ -65,7 +90,9 @@ return (
             <div >
                 <Arrow dir="left" clickHandler={() => clickHandlerLx(bestToScroll)} />
                 <ul className="titlesContainer" ref={bestToScroll}>
-                    <Title Data={favTitles} openTitleHandler={openTitleHandler}/>
+                    <Title 
+                        Data={favTitles} 
+                        openTitleHandler={openTitleHandler}/>
                 </ul>
                 <Arrow dir="right" clickHandler={() => clickHandlerRx(bestToScroll)}/>
             </div>
@@ -74,7 +101,9 @@ return (
             <h2>Matteo Current's watching</h2>
             <div>
                 <ul className="titlesContainer">
-                    <Title Data={currentTitles} openTitleHandler={openTitleHandler}/>
+                    <Title 
+                    Data={currentTitles} o
+                    penTitleHandler={openTitleHandler}/>
                 </ul>
             </div>
         </div>}

@@ -1,6 +1,6 @@
 import React from "react"
 import { nanoid } from 'nanoid';
-export default function Title({Data,openTitleHandler}){
+export default function Title({Data,openTitleHandler,like}){
 
     
       const liElement = Data.map((e)=>{
@@ -10,6 +10,7 @@ export default function Title({Data,openTitleHandler}){
             key={keyID} 
             className="titles" 
             onClick={()=>openTitleHandler(e.id)}
+            onDoubleClick={()=>like(e.id)}
             style={{
                     backgroundImage:`url("${e.Image}")`,
                     backgroundPosition:"center",
