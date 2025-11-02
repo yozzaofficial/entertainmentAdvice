@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import {Outlet,NavLink, useSearchParams} from "react-router-dom"
 import { MyContext } from "../App"
+import ProfileMenu from "./ProfileMenu"
 import "./css/Layout.css"
 export default function Layout(){
     const activeStyles={
@@ -8,6 +9,7 @@ export default function Layout(){
     } 
     const [searchParams,setSearchParams] = useSearchParams()
     const type = searchParams.get("type");
+    const [openMenu, setOpenMenu] = React.useState(false)
 
     const {openTitle} = useContext(MyContext);
 
@@ -16,7 +18,9 @@ export default function Layout(){
             <header id="headerLayout" className={openTitle ? "backgroundBlur" : null}>
                 <div>
                     <h1><NavLink to="/">Matteo Advice</NavLink></h1>
-                    <i className="icon-profile"></i>
+                    <i className="icon-profile" onClick={()=>setOpenMenu(prev => !prev)}>
+                        {openMenu && <ProfileMenu/>}
+                    </i>
                 </div>
                 <nav>
                     <NavLink 
