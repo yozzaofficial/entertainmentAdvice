@@ -5,6 +5,7 @@ import Data from "./../titles"
 import Arrow from "./../components/Arrow"
 import TitleDetail from "./TitleDetail";
 import { MyContext } from "../App";
+import { useClickAway } from "react-use";
 import "./css/Home.css"
 export default function Home(){
 
@@ -22,6 +23,10 @@ const currentTitles = currentFilter.filter(e=> e.Current==true)
 const bestToScroll = React.useRef(null)
 const adviceToScroll= React.useRef(null)
 const titleOpenedPosition =  React.useRef(null)
+const titleDetailClickAway = React.useRef(null)
+
+useClickAway(titleDetailClickAway, () => {if(openTitle){setOpenTitle(false)}});
+
 function clickHandlerRx(ref){
   if (ref.current) {
       ref.current.scrollBy({ left: 200, behavior: "smooth" });
@@ -74,11 +79,13 @@ return (
             </div>
         </div>}
     </main>
-    {openTitle && 
-    <TitleDetail 
-    title={titleOpened} 
-    closeTitleDetail={()=> setOpenTitle(prev => !prev)} 
-    topPosition = {popupPos}/>}
+    {openTitle && titleOpened && 
+    <div className="container" ref={titleDetailClickAway}>
+        <TitleDetail 
+        title={titleOpened} 
+        closeTitleDetail={()=> setOpenTitle(prev => !prev)} 
+        topPosition = {popupPos}/>
+    </div>}
     </>
 )
 }
