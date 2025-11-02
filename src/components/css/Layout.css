@@ -26,3 +26,21 @@ h1 a{
     text-decoration: none;
     font-size: 1.2em;
 }
+#headerLayout div{
+    position: relative;
+    width: 100%;
+}
+.icon-profile{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("./../../assets/icon-profile.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

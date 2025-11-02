@@ -14,7 +14,10 @@ export default function Layout(){
     return(
         <>
             <header id="headerLayout" className={openTitle ? "backgroundBlur" : null}>
-                <h1><NavLink to="/">Matteo Advice</NavLink></h1>
+                <div>
+                    <h1><NavLink to="/">Matteo Advice</NavLink></h1>
+                    <i className="icon-profile"></i>
+                </div>
                 <nav>
                     <NavLink 
                     to="?type=film"
