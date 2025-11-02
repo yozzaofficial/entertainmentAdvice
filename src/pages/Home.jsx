@@ -15,8 +15,8 @@ const [titleOpened,setTitleOpened] = React.useState()
 const [popupPos, setPopupPos] = React.useState(0);
 const type = searchParams.get("type");
 const {openTitle,setOpenTitle} = useContext(MyContext)
-let currentFilter = type ? Data.filter(e => e.Type === type) : Data;
 
+let currentFilter = type ? Data.filter(e => e.Type === type) : Data;
 const favTitles = currentFilter.filter(e => e.Favorite==true)
 const currentTitles = currentFilter.filter(e=> e.Current==true)
 

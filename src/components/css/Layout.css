@@ -26,7 +26,7 @@ h1 a{
     text-decoration: none;
     font-size: 1.2em;
 }
-#headerLayout div{
+#headerLayout div:not(div.iconContainer){
     position: relative;
     width: 100%;
 }
@@ -37,24 +37,38 @@ h1 a{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
-    top: 50%;
-    left: 90%;
-    transform: translateY(-50%);
     cursor: pointer;
 }
-
+i.backButton{
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("./../../assets/back-button.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#headerLayout div div.iconContainer{
+    position: absolute;
+    display: inline-flex;
+    top:50%;
+    left:80%;
+    gap:20px;
+    transform: translateY(-50%);
+    align-items: center;
+}
+#headerLayout div div.iconContainer a{
+    text-decoration: none;
+}
 
 @media all and (max-width:550px)
 {
-    .icon-profile{
+    #headerLayout div div.iconContainer .icon-profile{
         width: 20px;
         height: 20px;
     }
-}
-@media all and (max-width:400px)
-{
-    .icon-profile{
+    #headerLayout div div.iconContainer{
         top:150%;
         left:50%;
         transform: translateX(-50%);
