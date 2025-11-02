@@ -1,0 +1,12 @@
+.likedTitledContainer{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+.titleLikedList{
+    list-style: none;
+    display: flex;
+     gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}

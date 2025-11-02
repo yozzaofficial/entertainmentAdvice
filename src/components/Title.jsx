@@ -9,8 +9,8 @@ export default function Title({Data,openTitleHandler,like}){
         <li 
             key={keyID} 
             className="titles" 
-            onClick={()=>openTitleHandler(e.id)}
-            onDoubleClick={()=>like(e.id)}
+            {...(openTitleHandler ? { onClick: () => openTitleHandler(e.id) } : {})}
+            {...(like ? { onDoubleClick: () => like(e.id) } : {})}
             style={{
                     backgroundImage:`url("${e.Image}")`,
                     backgroundPosition:"center",
