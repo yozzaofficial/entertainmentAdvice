@@ -24,7 +24,7 @@ export default function Layout(){
                         className="icon-profile" 
                         onClick={()=>setOpenMenu(prev => !prev)}
                         ref={iconProfile}>
-                        {openMenu && <ProfileMenu/>}
+                        {openMenu && <ProfileMenu />}
                     </i>
                 </div>
                 <nav>

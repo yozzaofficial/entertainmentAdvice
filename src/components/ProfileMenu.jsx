@@ -5,8 +5,8 @@ export default function ProfileMenu(){
 return(
     <>
         <ul className="profileMenu">
-            <li><Link to="/towatch">To Watch</Link></li>
-            <li><Link to="/badtitles">Bad Titles</Link></li>
+            <Link to="/towatch"><li>To Watch</li></Link>
+            <Link to="/badtitles"><li>Bad Titles</li></Link>
         </ul>
     </>
 )
