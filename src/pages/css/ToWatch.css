@@ -1,7 +1,12 @@
 .likedTitledContainer{
     padding-top: 100px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.likedTitledContainer h2{
+    font-size: 1.4em;
+    font-weight: 500;
 }
 .titleLikedList{
     list-style: none;
