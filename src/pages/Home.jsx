@@ -102,8 +102,8 @@ return (
             <div>
                 <ul className="titlesContainer">
                     <Title 
-                    Data={currentTitles} o
-                    penTitleHandler={openTitleHandler}/>
+                    Data={currentTitles}
+                    openTitleHandler={openTitleHandler}/>
                 </ul>
             </div>
         </div>}

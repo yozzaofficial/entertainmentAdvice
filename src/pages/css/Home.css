@@ -55,6 +55,7 @@ li.titles{
     flex-shrink: 0;
     background-color: white;
     cursor: pointer;
+    border-radius: 10px;
 }
 li.titles:hover{
     transition: 0.2s ease;

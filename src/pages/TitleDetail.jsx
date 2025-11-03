@@ -1,6 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
+import { MyContext } from "../App";
 import "./css/TitleDetail.css"
 export default function TitleDetail({title,closeTitleDetail,topPosition}){
+    const {titleLiked,setTitleLiked} = useContext(MyContext)
+
+    function likeHandler(){
+        setTitleLiked(prev => {
+            if (prev.includes(title.id)) 
+                return prev.filter(id => id !== title.id)
+            else 
+                return [...prev, title.id]
+    })
+    }
 
     return(
         <div className="titleDetailContainer" style={{top: `${topPosition}px`}}>
@@ -16,7 +27,13 @@ export default function TitleDetail({title,closeTitleDetail,topPosition}){
                     </div>
                     <p>{title.Plot}</p>
                 </div>
+               
             </header>
+             <div className="likeContainer">
+                    <i 
+                    className={titleLiked.includes(title.id)? "likeFilled" : "like"}
+                    onClick={likeHandler}></i>
+            </div>
         <span onClick={closeTitleDetail}>X</span>
     </div>
 )

@@ -44,3 +44,27 @@ margin-bottom: 20px;
     font-weight: 100;
     cursor: pointer;
 }
+.likeContainer{
+    display: inline-block;
+    position: relative;
+    left:40%;
+    margin-top: 20px;
+}
+.like{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("./../../assets/like-empty.png");
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+.likeFilled{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("./../../assets/like-filled.png");
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
