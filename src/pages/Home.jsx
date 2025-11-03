@@ -92,7 +92,8 @@ return (
                 <ul className="titlesContainer" ref={bestToScroll}>
                     <Title 
                         Data={favTitles} 
-                        openTitleHandler={openTitleHandler}/>
+                        openTitleHandler={openTitleHandler}
+                        like={likeHandler}/>
                 </ul>
                 <Arrow dir="right" clickHandler={() => clickHandlerRx(bestToScroll)}/>
             </div>
@@ -103,7 +104,8 @@ return (
                 <ul className="titlesContainer">
                     <Title 
                     Data={currentTitles}
-                    openTitleHandler={openTitleHandler}/>
+                    openTitleHandler={openTitleHandler}
+                    like={likeHandler}/>
                 </ul>
             </div>
         </div>}
