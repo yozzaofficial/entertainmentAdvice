@@ -2,7 +2,7 @@ import React from "react"
 import { nanoid } from 'nanoid';
 import { MyContext } from "../App";
 
-export default function Title({Data,openTitleHandler,like,likeHandlerToWatch}){
+export default function Title({Data,openTitleHandler,like,likeHandlerToWatch,animationId}){
 
      const {setTitleLiked} = React.useContext(MyContext)
     
@@ -17,12 +17,12 @@ export default function Title({Data,openTitleHandler,like,likeHandlerToWatch}){
             key={keyID} 
             className={`titles ${likeHandlerToWatch ? "filterToWatch" : ""}`}
             {...(openTitleHandler ? { onClick: () => openTitleHandler(e.id) } : {})}
-            {...(like ? { onDoubleClick: () => like(e.id) } : {})}
+            {...(like ? { onDoubleClick: () => {like(e.id)} } : {})}
             style={{
                     backgroundImage:`url("${e.Image}")`,
                     backgroundPosition:"center",
                     backgroundSize:"cover"}}>
-            
+            {animationId==e.id ? <span className="likeAnimation"></span> : null}
             {likeHandlerToWatch && <span className="likeButtonToWatch" onClick={()=>removeLike(e.id)}></span>}
             </li>)
     })

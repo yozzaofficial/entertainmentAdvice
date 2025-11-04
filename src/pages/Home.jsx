@@ -16,6 +16,7 @@ const type = searchParams.get("type");
 const {openTitle,setOpenTitle} = useContext(MyContext)
 
 const {titleLiked, setTitleLiked} = useContext(MyContext)
+const [animationId,setAnimationId] = React.useState(null)
 
 let currentFilter = type ? Data.filter(e => e.Type === type) : Data;
 const favTitles = currentFilter.filter(e => e.Favorite==true)
@@ -25,7 +26,7 @@ const bestToScroll = React.useRef(null)
 const adviceToScroll= React.useRef(null)
 const titleOpenedPosition =  React.useRef(null)
 const titleDetailClickAway = React.useRef(null)
- const clickTimeout = React.useRef(null);
+const clickTimeout = React.useRef(null);
 
 useClickAway(titleDetailClickAway, () => {if(openTitle){setOpenTitle(false)}});
 
@@ -66,6 +67,7 @@ function likeHandler(id){
 
 const titleSelected = Data.find(e => e.id==id)
 setTitleLiked(prev => [...prev, titleSelected.id])
+setAnimationId(id)
 
 }
 
@@ -80,7 +82,9 @@ return (
                     <Title 
                         Data={currentFilter} 
                         openTitleHandler={openTitleHandler}
-                        like={likeHandler}/>
+                        like={likeHandler}
+                        animationId={animationId}
+                    />
                 </ul>
                 <Arrow dir="right" clickHandler={() => clickHandlerRx(adviceToScroll)}/>
             </div>
