@@ -35,6 +35,7 @@
 display: flex;
 gap:50px;
 margin-bottom: 20px;
+flex-wrap: wrap;
 }
 .titleDetailContainer span{
     position: absolute;
@@ -87,4 +88,31 @@ margin-bottom: 20px;
     background-size: contain;
     cursor: pointer;
     margin-left: 20px;
+}
+
+@media all and (max-width:650px){
+    .titleDetailContainer{
+        transform: translateX(-50%) scale(0.8);
+    }
+}
+@media all and (max-width:500px){
+    .titleDetailContainer{
+        transform: translateX(-50%) scale(0.6);
+    }
+    #titleDetailHeader div{
+    gap:25px;
+}
+.titleDetailContainer span{
+    right: 50px;
+}
+.titleDetailContainer p{
+    width: 350px;
+}
+}
+
+
+@media all and (max-width:500px){
+    .titleDetailContainer{
+        transform: translateX(-50%) scale(0.5);
+    }
 }

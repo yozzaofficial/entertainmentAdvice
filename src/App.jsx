@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { HashRouter, Routes, Route, Link } from "react-router-dom"
 import Layout from "./components/Layout"
 import Home from "./pages/Home"
 import ToWatch from "./pages/ToWatch"
@@ -14,7 +14,7 @@ const [titleDisliked,setTitleDisliked] = React.useState([])
   return (
     <>
      <MyContext.Provider value={{openTitle,setOpenTitle,titleLiked,setTitleLiked,titleDisliked,setTitleDisliked}}>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Layout/>}>
               <Route index element={<Home/>}></Route>
@@ -22,7 +22,7 @@ const [titleDisliked,setTitleDisliked] = React.useState([])
               <Route path="/badtitles" element={<BadTitles/>}></Route>
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </MyContext.Provider>
     </>
   )
