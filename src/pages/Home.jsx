@@ -68,7 +68,6 @@ function likeHandler(id){
 const titleSelected = Data.find(e => e.id==id)
 setTitleLiked(prev => [...prev, titleSelected.id])
 setAnimationId(id)
-
 }
 
 return (

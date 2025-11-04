@@ -40,10 +40,29 @@ span.likeButtonToWatch{
     top: 50%;
     transform: translate(-50%,-50%);
    z-index: 1;
+   animation: shakingAnimation 2s infinite;
+   animation-delay: 1s;
 }
 .filterToWatch::before{
  content: '';
   position: absolute;
   inset: 0;
   backdrop-filter: blur(1px);
+}
+@keyframes shakingAnimation {
+    0%{
+        transform: translate(-50%,-50%) rotate(0);
+    }
+    10%{
+        transform: translate(-50%,-50%) rotate(10deg);
+    }
+    30%{
+        transform: translate(-50%,-50%) rotate(-10deg);
+    }
+    50%{
+        transform: translate(-50%,-50%) rotate(0);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(0);
+    }
 }

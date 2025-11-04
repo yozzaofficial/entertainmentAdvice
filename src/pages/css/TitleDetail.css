@@ -68,3 +68,23 @@ margin-bottom: 20px;
     background-size: contain;
     cursor: pointer;
 }
+.disLikeButton{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("./../../assets/dislike-empty.png");
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.disLikeButtonFilled{
+     display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("./../../assets/dislike-filled.png");
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    margin-left: 20px;
+}

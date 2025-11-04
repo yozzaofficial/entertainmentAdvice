@@ -13,7 +13,7 @@ const [titleLiked, setTitleLiked] = React.useState([])
 const [titleDisliked,setTitleDisliked] = React.useState([])
   return (
     <>
-     <MyContext.Provider value={{openTitle,setOpenTitle,titleLiked,setTitleLiked}}>
+     <MyContext.Provider value={{openTitle,setOpenTitle,titleLiked,setTitleLiked,titleDisliked,setTitleDisliked}}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout/>}>

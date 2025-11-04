@@ -3,7 +3,7 @@ import { MyContext } from "../App";
 import "./css/TitleDetail.css"
 export default function TitleDetail({title,closeTitleDetail,topPosition}){
     const {titleLiked,setTitleLiked} = useContext(MyContext)
-
+    const {titleDisliked,setTitleDisliked} = useContext(MyContext)
     function likeHandler(){
         setTitleLiked(prev => {
             if (prev.includes(title.id)) 
@@ -11,6 +11,15 @@ export default function TitleDetail({title,closeTitleDetail,topPosition}){
             else 
                 return [...prev, title.id]
     })
+    }
+    function dislikeHandler(){
+        setTitleDisliked(prev=>{
+             if (prev.includes(title.id)) 
+                return prev.filter(id => id !== title.id)
+            else 
+                return [...prev, title.id]
+         
+        })
     }
 
     return(
@@ -33,6 +42,9 @@ export default function TitleDetail({title,closeTitleDetail,topPosition}){
                     <i 
                     className={titleLiked.includes(title.id)? "likeFilled" : "like"}
                     onClick={likeHandler}></i>
+                    <i 
+                    className={titleDisliked.includes(title.id) ?"disLikeButtonFilled" : "disLikeButton"}
+                    onClick={dislikeHandler}></i>
             </div>
         <span onClick={closeTitleDetail}>X</span>
     </div>
