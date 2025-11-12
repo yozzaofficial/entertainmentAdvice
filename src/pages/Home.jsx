@@ -20,9 +20,7 @@ const{titleDisliked} = useContext(MyContext)
 const [animationId,setAnimationId] = React.useState(null)
 
 let currentFilter = type ? Data.filter(e => e.Type === type) : Data;
-currentFilter = currentFilter.filter(
-  e => !titleLiked.includes(e.id) && !titleDisliked.includes(e.id)
-);
+
 const favTitles = currentFilter.filter(e => e.Favorite==true)
 const currentTitles = currentFilter.filter(e=> e.Current==true)
 
