@@ -57,6 +57,7 @@ i.backButton{
     gap:20px;
     transform: translateY(-50%);
     align-items: center;
+    z-index: 1;
 }
 #headerLayout div div.iconContainer a{
     text-decoration: none;
